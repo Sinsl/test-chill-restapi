@@ -4,19 +4,19 @@ import { useState, MouseEvent } from "react";
 
 
 export const FormsAuth = ({onLogin, onRegister}: FormsAuthProps) => {
-  const [login, setLogin] = useState({email: '', pass: ''});
-  const [register, setRegister] = useState({email: '', pass: ''});
+  const [login, setLogin] = useState({email: '', password: ''});
+  const [register, setRegister] = useState({email: '', password: ''});
 
   const onLoginHandler = (e: MouseEvent) => {
     e.preventDefault();
     onLogin(login);
-    setLogin({email: '', pass: ''});
+    setLogin({email: '', password: ''});
   }
 
   const onRegisterHandler = (e: MouseEvent) => {
     e.preventDefault();
     onRegister(register);
-    setRegister({email: '', pass: ''});
+    setRegister({email: '', password: ''});
   }
 
   return (
@@ -33,8 +33,8 @@ export const FormsAuth = ({onLogin, onRegister}: FormsAuthProps) => {
           <input 
             type="password" 
             name="password" 
-            onChange={(e) => setLogin(prev => ({ ...prev, pass: e.target.value }))}
-            value={login.pass}
+            onChange={(e) => setLogin(prev => ({ ...prev, password: e.target.value }))}
+            value={login.password}
           />
           <input type="submit" value="Отправить" onClick={onLoginHandler}/>
         </form>        
@@ -51,8 +51,8 @@ export const FormsAuth = ({onLogin, onRegister}: FormsAuthProps) => {
           <input 
             type="password" 
             name="password"
-            onChange={(e) => setRegister(prev => ({ ...prev, pass: e.target.value }))}
-            value={register.pass}
+            onChange={(e) => setRegister(prev => ({ ...prev, password: e.target.value }))}
+            value={register.password}
           />
           <input type="submit" value="Отправить" onClick={onRegisterHandler}/>
         </form> 

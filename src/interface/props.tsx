@@ -4,7 +4,7 @@ export interface ButtonPanelProps {
 
 export interface DataUserAuth  {
   email: string,
-  pass: string
+  password: string
 }
 
 export interface FormsAuthProps {
